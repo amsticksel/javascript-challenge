@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>UFO Sightings: Searching for the Truth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+
+    <link rel="stylesheet" href="static/css/style2.css">
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!-- Bootstrap Date-Picker Plugin -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+</head>
+
+<body>
+   <div class="container">
+
+
+    <header role="banner">
+        <div class="nav">
+            <nav class="navbar-custom navbar-light">
+                    <img class="nav-ufo" src="static/images/ufo.svg">
+                    <a class="" href="index.html">UFO Sightings
+                    </a>
+            </nav>
+        </div>
+        <div class="header">
+            <h1>UFO Sightings</h1>
+            <p>We Want To Believe</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-wrapper">
+            <div class="row">
+        
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+
+                <div class="panel-heading">Filter Search</div>
+                <div class="theform">
+                <div class="form-group">
+                    <form method="filter"></form>
+                    <!-- Date input -->
+                    <label class="control-label" for="date">Date</label>
+                    <input class="form-control" id="date" name="date" placeholder="M/D/YYY" type="text" />
+                </div>
+                <div class="btn-group">
+                    <!-- Submit button -->
+                   <button id="filter-btn" class="btn btn-info " name="submit" type="filter">Submit</button>&nbsp;&nbsp;
+                   <button id="reset-btn" class="btn btn-info " name="reset" type="filter">Reset</button>
+                
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12">
+            <table id="ufo-table" class="">
+                <thead>
+                    <tr id="header-row" class="theader">
+                        <th class="table-head">Date</th>
+                        <th class="table-head">City</th>
+                        <th class="table-head">State</th>
+                        <th class="table-head">Country</th>
+                        <th class="table-head">Shape</th>
+                        <th class="table-head">Duration</th>
+                        <th class="table-head">Comments</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span class="bottom">UFO Sightings</span>
+    </footer>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="static/js/data.js"></script>
+    <script src="static/js/app.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var date_input = $('input[name="date"]'); //our date input has the name "date"
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+            var options = {
+                format: 'm/d/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            };
+            date_input.datepicker(options);
+        });
+    </script>
+</body>
+
+</html>
